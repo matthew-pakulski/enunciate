@@ -42,6 +42,27 @@
               <goal>run</goal>
             </goals>
           </execution>
+          <execution>
+            <id>enunciate-collapse-type-hierarchy</id>
+            <phase>generate-test-resources</phase>
+            <configuration>
+              <tasks>
+                <taskdef name="enunciate" classname="com.webcohesion.enunciate.EnunciateTask">
+                  <classpath refid="maven.test.classpath" />
+                </taskdef>
+
+                <mkdir dir="${project.build.directory}/enunciate" />
+
+                <enunciate basedir="${basedir}/src/test/samples" configFile="${basedir}/src/test/samples/enunciate-collapse-type-hierarchy.xml" buildDir="${project.build.directory}/enunciate">
+                  <include name="**/*.java" />
+                  <classpath refid="maven.test.classpath" />
+                </enunciate>
+              </tasks>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
         </executions>
       </plugin>
       <plugin>

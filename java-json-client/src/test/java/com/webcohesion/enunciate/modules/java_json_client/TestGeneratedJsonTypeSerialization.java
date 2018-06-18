@@ -42,7 +42,7 @@ import java.util.*;
  * @author Ryan Heaton
  */
 public class TestGeneratedJsonTypeSerialization extends TestCase {
-
+  
   /**
    * tests the basic shapes.
    */
